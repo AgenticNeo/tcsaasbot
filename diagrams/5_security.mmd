@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph EDGE["🌐 Edge Security"]
+        CF["☁️ Cloudflare Free<br/>DDoS Protection + WAF"]
+        LE["🔒 Let's Encrypt<br/>Auto TLS via Caddy"]
+    end
+
+    subgraph NETWORK["🔐 Network Layer"]
+        FW["🧱 UFW Firewall<br/>Allow: 80, 443, 22<br/>Block: All Other"]
+        F2B["🚫 Fail2Ban<br/>SSH Brute Force Guard"]
+        CADDY2["⚡ Caddy<br/>Rate Limiting +<br/>Security Headers"]
+    end
+
+    subgraph APP_SEC["🛡️ Application Layer"]
+        AUTH["🔑 API Key Auth<br/>X-API-Key Header<br/>Tenant Isolation"]
+        CORS2["🌐 CORS Whitelist<br/>Origin Validation"]
+        VALID["✅ Pydantic Validation<br/>Input Sanitization"]
+        RATE["⏱️ Rate Limiting<br/>Per-Tenant Quotas"]
+    end
+
+    subgraph DATA_SEC["🔒 Data Layer"]
+        ENC_REST["🔐 Encryption at Rest<br/>LUKS / PostgreSQL TDE"]
+        ENC_TRANSIT["🔐 Encryption in Transit<br/>TLS 1.3 Everywhere"]
+        BACKUP["💾 Automated Backups<br/>pg_dump + Restic<br/>to Backblaze B2"]
+        SECRETS["🗝️ Secrets Management<br/>.env + Docker Secrets"]
+    end
+
+    CF --> LE
+    LE --> CADDY2
+    FW --> CADDY2
+    F2B --> FW
+    CADDY2 --> AUTH
+    AUTH --> CORS2
+    CORS2 --> VALID
+    VALID --> RATE
+    RATE --> ENC_TRANSIT
+    ENC_TRANSIT --> ENC_REST
+
+    classDef edge fill:#f59e0b,stroke:#d97706,color:#000
+    classDef network fill:#dc2626,stroke:#b91c1c,color:#fff
+    classDef appsec fill:#7c3aed,stroke:#6d28d9,color:#fff
+    classDef datasec fill:#059669,stroke:#047857,color:#fff
+
+    class CF,LE edge
+    class FW,F2B,CADDY2 network
+    class AUTH,CORS2,VALID,RATE appsec
+    class ENC_REST,ENC_TRANSIT,BACKUP,SECRETS datasec

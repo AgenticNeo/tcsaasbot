@@ -1,0 +1,65 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # Scrape Docker container logs (main method — captures stdout/stderr from all containers)
+  - job_name: docker
+    docker_sd_configs:
+      - host: unix:///var/run/docker.sock
+        refresh_interval: 5s
+    relabel_configs:
+      - source_labels: ['__meta_docker_container_name']
+        regex: '/(.*)'
+        target_label: 'container'
+      - source_labels: ['__meta_docker_container_log_stream']
+        target_label: 'stream'
+      # Only scrape containers with the tcsaasbot label
+      - source_labels: ['__meta_docker_container_label_com_docker_compose_project']
+        target_label: 'project'
+
+    pipeline_stages:
+      # Parse JSON logs emitted by our Python app (pythonjsonlogger format)
+      - json:
+          expressions:
+            timestamp: asctime
+            level: levelname
+            logger: name
+            message: message
+            trace_id: trace_id
+            span_id: span_id
+            # Business metrics extracted from structured logs
+            http_method: http_method
+            path: path
+            status_code: status_code
+            duration_ms: duration_ms
+            tenant_id: tenant_id
+            bot_id: bot_id
+            conversation_id: conversation_id
+            error: error
+
+      # Set timestamp from the JSON log
+      - timestamp:
+          source: timestamp
+          format: "2006-01-02 15:04:05,000"
+          fallback_formats:
+            - "2006-01-02T15:04:05.000Z"
+            - "2006-01-02T15:04:05Z"
+
+      # Promote key fields to labels for fast filtering in Grafana
+      - labels:
+          level:
+          logger:
+          trace_id:
+          http_method:
+          tenant_id:
+
+      # Set the log line output (keep it human-readable)
+      - output:
+          source: message

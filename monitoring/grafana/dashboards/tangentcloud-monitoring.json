@@ -1,0 +1,741 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 1,
+    "id": null,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 100,
+            "title": "🔍 API Overview",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 30,
+                        "stacking": {
+                            "mode": "normal"
+                        }
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 1
+            },
+            "id": 1,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "sum"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Requests by Status Code",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "sum by (status_code) (count_over_time({logger=\"TangentCloud\"} | json | message = `request_completed` [$__auto]))",
+                    "legendFormat": "{{status_code}}",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "line",
+                        "fillOpacity": 15,
+                        "spanNulls": true
+                    },
+                    "unit": "ms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "id": 2,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "mean",
+                        "max"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Request Duration (ms)",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "avg_over_time({logger=\"TangentCloud\"} | json | message = `request_completed` | unwrap duration_ms [$__auto]) by (path)",
+                    "legendFormat": "{{path}}",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 40,
+                        "stacking": {
+                            "mode": "normal"
+                        }
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 9
+            },
+            "id": 3,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Requests by Endpoint",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "sum by (path) (count_over_time({logger=\"TangentCloud\"} | json | message = `request_completed` | path =~ `/api/.*` [$__auto]))",
+                    "legendFormat": "{{path}}",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "red",
+                        "mode": "fixed"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 50
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 9
+            },
+            "id": 4,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "⚠️ Errors (4xx + 5xx)",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "sum by (path, status_code) (count_over_time({logger=\"TangentCloud\"} | json | message = `request_completed` | status_code >= 400 [$__auto]))",
+                    "legendFormat": "{{status_code}} {{path}}",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 17
+            },
+            "id": 101,
+            "title": "💬 Chat & AI Pipeline",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 40,
+                        "stacking": {
+                            "mode": "normal"
+                        }
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 0,
+                "y": 18
+            },
+            "id": 5,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Chat Messages by Type",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "sum by (response_type) (count_over_time({logger=\"TangentCloud\"} | json | message = `ai_response_generated` [$__auto]))",
+                    "legendFormat": "{{response_type}}",
+                    "refId": "A"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `small_talk_matched` [$__auto])",
+                    "legendFormat": "small_talk",
+                    "refId": "B"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `agent_transfer_triggered` [$__auto])",
+                    "legendFormat": "agent_transfer",
+                    "refId": "C"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "line",
+                        "fillOpacity": 15,
+                        "spanNulls": true
+                    },
+                    "unit": "ms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 8,
+                "y": 18
+            },
+            "id": 6,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "mean",
+                        "max",
+                        "lastNotNull"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "AI Response Latency (ms)",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "avg_over_time({logger=\"TangentCloud\"} | json | message = `ai_response_generated` | unwrap duration_ms [$__auto]) by (response_type)",
+                    "legendFormat": "avg {{response_type}}",
+                    "refId": "A"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "max_over_time({logger=\"TangentCloud\"} | json | message = `ai_response_generated` | unwrap duration_ms [$__auto]) by (response_type)",
+                    "legendFormat": "p100 {{response_type}}",
+                    "refId": "B"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "line",
+                        "fillOpacity": 15,
+                        "spanNulls": true
+                    },
+                    "unit": "ms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 18
+            },
+            "id": 7,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "mean",
+                        "max"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "RAG Query Latency (ms)",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "avg_over_time({logger=\"TangentCloud\"} | json | message = `rag_query_completed` | unwrap duration_ms [$__auto])",
+                    "legendFormat": "avg",
+                    "refId": "A"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "max_over_time({logger=\"TangentCloud\"} | json | message = `rag_query_completed` | unwrap duration_ms [$__auto])",
+                    "legendFormat": "max",
+                    "refId": "B"
+                }
+            ]
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 26
+            },
+            "id": 102,
+            "title": "📊 Business Events",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 40
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 0,
+                "y": 27
+            },
+            "id": 8,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Leads Submitted",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `lead_submitted` [$__auto])",
+                    "legendFormat": "leads",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 40
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 8,
+                "y": 27
+            },
+            "id": 9,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Bot Operations",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `bot_created` [$__auto])",
+                    "legendFormat": "created",
+                    "refId": "A"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `bot_updated` [$__auto])",
+                    "legendFormat": "updated",
+                    "refId": "B"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `bot_deleted` [$__auto])",
+                    "legendFormat": "deleted",
+                    "refId": "C"
+                }
+            ]
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "drawStyle": "bars",
+                        "fillOpacity": 40,
+                        "stacking": {
+                            "mode": "normal"
+                        }
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 27
+            },
+            "id": 10,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "calcs": [
+                        "sum"
+                    ]
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "title": "Document Ingestion",
+            "type": "timeseries",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `document_uploaded` [$__auto])",
+                    "legendFormat": "uploaded",
+                    "refId": "A"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `document_ingested` [$__auto])",
+                    "legendFormat": "ingested",
+                    "refId": "B"
+                },
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "count_over_time({logger=\"TangentCloud\"} | json | message = `document_deleted` [$__auto])",
+                    "legendFormat": "deleted",
+                    "refId": "C"
+                }
+            ]
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 35
+            },
+            "id": 103,
+            "title": "📋 Live Log Stream",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "loki",
+                "uid": "${datasource}"
+            },
+            "gridPos": {
+                "h": 12,
+                "w": 24,
+                "x": 0,
+                "y": 36
+            },
+            "id": 11,
+            "options": {
+                "dedupStrategy": "none",
+                "enableLogDetails": true,
+                "prettifyLogMessage": true,
+                "showCommonLabels": false,
+                "showLabels": true,
+                "showTime": true,
+                "sortOrder": "Descending",
+                "wrapLogMessage": true
+            },
+            "title": "All Application Logs",
+            "type": "logs",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "loki",
+                        "uid": "${datasource}"
+                    },
+                    "expr": "{logger=\"TangentCloud\"} | json",
+                    "refId": "A"
+                }
+            ]
+        }
+    ],
+    "schemaVersion": 39,
+    "tags": [
+        "tangentcloud",
+        "monitoring",
+        "loki"
+    ],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "selected": false,
+                    "text": "Loki",
+                    "value": "loki"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Datasource",
+                "name": "datasource",
+                "options": [],
+                "query": "loki",
+                "refresh": 1,
+                "type": "datasource"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "TangentCloud - Application Monitoring",
+    "uid": "tangentcloud-monitoring",
+    "version": 1
+}

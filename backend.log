@@ -1,0 +1,226 @@
+INFO:     Will watch for changes in these directories: ['/Users/kamarajp/TCSAASBOT/backend']
+INFO:     Uvicorn running on http://0.0.0.0:9011 (Press CTRL+C to quit)
+INFO:     Started reloader process [6066] using WatchFiles
+INFO:     Started server process [6068]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/bot.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6068]
+INFO:     Started server process [8668]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52272 - "GET /api/v1/ HTTP/1.1" 404 Not Found
+{
+    "name": "GET http send",
+    "context": {
+        "trace_id": "0x5f110f1e77c2bb8d4484070f1664a646",
+        "span_id": "0x00b86660a4c106c8",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x6adea737a2d42f4b",
+    "start_time": "2026-02-17T05:38:45.864081Z",
+    "end_time": "2026-02-17T05:38:45.865101Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 404
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET http send",
+    "context": {
+        "trace_id": "0x5f110f1e77c2bb8d4484070f1664a646",
+        "span_id": "0xe7f33f0032d547d4",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x6adea737a2d42f4b",
+    "start_time": "2026-02-17T05:38:45.872778Z",
+    "end_time": "2026-02-17T05:38:45.872788Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET",
+    "context": {
+        "trace_id": "0x5f110f1e77c2bb8d4484070f1664a646",
+        "span_id": "0x6adea737a2d42f4b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T05:38:45.837650Z",
+    "end_time": "2026-02-17T05:38:45.873030Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/api/v1/",
+        "http.url": "http://localhost:9011/api/v1/",
+        "http.method": "GET",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "curl/8.7.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 52272,
+        "http.status_code": 404
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 11:08:50,607", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.00s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+INFO:     127.0.0.1:52301 - "GET /docs HTTP/1.1" 200 OK
+{"asctime": "2026-02-17 11:08:57,106", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0x03fe05c3b4ed8edbfac7d78933aa14b6",
+        "span_id": "0x9abc95fa0bc9ede6",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x724bc938c49381d1",
+    "start_time": "2026-02-17T05:38:56.712941Z",
+    "end_time": "2026-02-17T05:38:56.712966Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0x03fe05c3b4ed8edbfac7d78933aa14b6",
+        "span_id": "0x6c07b6d9aaad094c",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x724bc938c49381d1",
+    "start_time": "2026-02-17T05:38:56.713300Z",
+    "end_time": "2026-02-17T05:38:56.713308Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs",
+    "context": {
+        "trace_id": "0x03fe05c3b4ed8edbfac7d78933aa14b6",
+        "span_id": "0x724bc938c49381d1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T05:38:56.710937Z",
+    "end_time": "2026-02-17T05:38:56.713330Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/docs",
+        "http.url": "http://localhost:9011/docs",
+        "http.method": "GET",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "curl/8.7.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 52301,
+        "http.route": "/docs",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 11:09:02,109", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 0.95s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{"asctime": "2026-02-17 11:09:09,367", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+./run_backend.sh: line 6:  6066 Killed: 9               uvicorn app.main:app --host 0.0.0.0 --port 9011 --reload

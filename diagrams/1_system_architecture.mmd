@@ -1,0 +1,137 @@
+graph TB
+    subgraph INTERNET["🌐 Internet"]
+        U1["👤 End Users<br/>(Chat Widget)"]
+        U2["👩‍💼 Dashboard Users<br/>(Admin/Tenant)"]
+        U3["📱 Mobile Users<br/>(Expo App)"]
+        DNS["🔗 DNS Provider<br/>Cloudflare Free"]
+    end
+
+    subgraph VPS["🖥️ Self-Hosted VPS — Ubuntu 22.04 LTS"]
+        subgraph PROXY["🔒 Reverse Proxy Layer"]
+            CADDY["⚡ Caddy v2<br/>Auto SSL via Let's Encrypt<br/>Ports 80 / 443"]
+        end
+
+        subgraph APP["🐳 Docker Compose — Application Stack"]
+            subgraph FRONTEND["Frontend Containers"]
+                DASH["💻 Dashboard<br/>Next.js 15 SSR<br/>Port 9101"]
+                WIDGET["🔌 Chat Widget<br/>Embeddable JS"]
+            end
+
+            subgraph BACKEND["Backend Container"]
+                API["🚀 FastAPI + Uvicorn<br/>ASGI Server<br/>Port 9100"]
+
+                subgraph ROUTES["API Routers"]
+                    R_CHAT["/api/v1/chat"]
+                    R_DASH["/api/v1/dashboard"]
+                    R_INGEST["/api/v1/ingest"]
+                    R_LEADS["/api/v1/leads"]
+                    R_ANALYTICS["/api/v1/analytics"]
+                    R_FLOWS["/api/v1/flows"]
+                    R_BILLING["/api/v1/billing"]
+                end
+
+                subgraph SERVICES["Core Services"]
+                    SVC_RAG["🧠 RAG Service<br/>LangChain + ChromaDB"]
+                    SVC_AGENT["🤖 Agent Service<br/>Tool Calling"]
+                    SVC_EMAIL["📧 Email Service<br/>SMTP"]
+                    SVC_BILLING["💳 Billing Service<br/>Stripe Webhooks"]
+                end
+
+                subgraph MIDDLEWARE["Middleware Stack"]
+                    MW_CORS["CORS"]
+                    MW_LOG["JSON Request Logger"]
+                    MW_AUTH["API Key Auth<br/>Tenant Isolation"]
+                end
+            end
+
+            MOBILE["📱 Expo Dev Server<br/>React Native<br/>Port 9102"]
+        end
+
+        subgraph DATA["🐳 Docker Compose — Data Layer"]
+            POSTGRES["🐘 PostgreSQL 16<br/>Relational DB<br/>Port 5432"]
+            REDIS["⚡ Redis 7 Alpine<br/>Cache + Queues<br/>Port 6379"]
+            CHROMA["🔮 ChromaDB<br/>Vector Embeddings<br/>Port 8000"]
+        end
+
+        subgraph MONITORING["🐳 Docker Compose — Observability"]
+            LOKI["📋 Grafana Loki 3.0<br/>Log Aggregation<br/>Port 3100"]
+            PROMTAIL["📡 Promtail<br/>Log Shipper"]
+            PROM["📊 Prometheus<br/>Metrics<br/>Port 9090"]
+            GRAFANA["📈 Grafana 11<br/>Dashboards<br/>Port 3001"]
+            OTEL["🔭 OpenTelemetry<br/>Collector<br/>Port 4317"]
+        end
+
+        subgraph STORAGE["💾 Docker Volumes"]
+            VOL_DB[("postgres_data")]
+            VOL_REDIS[("redis_data")]
+            VOL_CHROMA[("chroma_data")]
+            VOL_LOKI[("loki_data")]
+            VOL_GRAFANA[("grafana_data")]
+        end
+    end
+
+    subgraph EXTERNAL["☁️ External APIs"]
+        GEMINI["🤖 Google Gemini API<br/>gemini-2.0-flash<br/>gemini-embedding-001"]
+        OLLAMA["🦙 Ollama Self-Hosted<br/>llama3 / mistral<br/>Port 11434"]
+        STRIPE["💳 Stripe API"]
+        SMTP_EXT["📧 SMTP Server"]
+    end
+
+    U1 -->|"HTTPS"| DNS
+    U2 -->|"HTTPS"| DNS
+    U3 -->|"HTTPS"| DNS
+    DNS -->|"A Record"| CADDY
+
+    CADDY -->|"app.domain.com"| DASH
+    CADDY -->|"api.domain.com"| API
+    CADDY -->|"grafana.domain.com"| GRAFANA
+
+    DASH -->|"REST API"| API
+    WIDGET -->|"REST API"| API
+    MOBILE -->|"REST API"| API
+
+    R_CHAT --> SVC_RAG
+    R_CHAT --> SVC_AGENT
+    R_INGEST --> SVC_RAG
+    R_LEADS --> SVC_EMAIL
+    R_BILLING --> SVC_BILLING
+
+    API -->|"SQLAlchemy ORM"| POSTGRES
+    API -->|"Session Cache"| REDIS
+    SVC_RAG -->|"Vector Search"| CHROMA
+    SVC_RAG -->|"LLM + Embeddings"| GEMINI
+    SVC_RAG -.->|"Alt: Local LLM"| OLLAMA
+    SVC_AGENT -->|"LLM Calls"| GEMINI
+    SVC_BILLING -->|"Webhooks"| STRIPE
+    SVC_EMAIL -->|"SMTP"| SMTP_EXT
+
+    API -->|"OTLP gRPC"| OTEL
+    OTEL --> LOKI
+    OTEL --> PROM
+    PROMTAIL -->|"Scrape Logs"| LOKI
+    PROM --> GRAFANA
+    LOKI --> GRAFANA
+
+    POSTGRES --- VOL_DB
+    REDIS --- VOL_REDIS
+    CHROMA --- VOL_CHROMA
+    LOKI --- VOL_LOKI
+    GRAFANA --- VOL_GRAFANA
+
+    classDef proxy fill:#1e40af,stroke:#1e3a5f,color:#fff
+    classDef frontend fill:#059669,stroke:#047857,color:#fff
+    classDef backend fill:#7c3aed,stroke:#6d28d9,color:#fff
+    classDef data fill:#dc2626,stroke:#b91c1c,color:#fff
+    classDef monitoring fill:#f59e0b,stroke:#d97706,color:#000
+    classDef external fill:#6b7280,stroke:#4b5563,color:#fff
+    classDef volume fill:#374151,stroke:#1f2937,color:#fff
+
+    class CADDY proxy
+    class DASH,WIDGET,MOBILE frontend
+    class API,R_CHAT,R_DASH,R_INGEST,R_LEADS,R_ANALYTICS,R_FLOWS,R_BILLING backend
+    class SVC_RAG,SVC_AGENT,SVC_EMAIL,SVC_BILLING backend
+    class MW_CORS,MW_LOG,MW_AUTH backend
+    class POSTGRES,REDIS,CHROMA data
+    class LOKI,PROMTAIL,PROM,GRAFANA,OTEL monitoring
+    class GEMINI,OLLAMA,STRIPE,SMTP_EXT external
+    class VOL_DB,VOL_REDIS,VOL_CHROMA,VOL_LOKI,VOL_GRAFANA volume

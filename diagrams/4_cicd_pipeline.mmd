@@ -1,0 +1,51 @@
+flowchart LR
+    subgraph DEV["💻 Developer"]
+        CODE["📝 Code Changes"]
+        TEST["🧪 Local pytest<br/>29 tests"]
+    end
+
+    subgraph GIT["📦 Git Server"]
+        GITEA["Gitea / Forgejo<br/>Self-Hosted Git"]
+    end
+
+    subgraph CI["⚙️ CI/CD"]
+        DRONE["🚁 Drone CI<br/>or Woodpecker"]
+        LINT["🔍 Lint +<br/>Type Check"]
+        UNIT["🧪 Unit Tests"]
+        BUILD["🐳 Docker<br/>Build"]
+        PUSH["📤 Push<br/>Image"]
+    end
+
+    subgraph REGISTRY["📦 Registry"]
+        REG["🐳 Docker Registry<br/>Self-Hosted :5000"]
+    end
+
+    subgraph DEPLOY["🖥️ VPS Deploy"]
+        PULL["📥 Docker Pull"]
+        COMPOSE["🐳 docker compose<br/>up -d"]
+        HEALTH["❤️ Health Check"]
+        ROLLBACK["⏪ Auto Rollback<br/>on Failure"]
+    end
+
+    CODE -->|"git push"| GITEA
+    GITEA -->|"webhook"| DRONE
+    DRONE --> LINT
+    LINT --> UNIT
+    UNIT --> BUILD
+    BUILD --> PUSH
+    PUSH --> REG
+    REG --> PULL
+    PULL --> COMPOSE
+    COMPOSE --> HEALTH
+    HEALTH -->|"fail"| ROLLBACK
+    TEST -.->|"local run"| CODE
+
+    classDef dev fill:#059669,stroke:#047857,color:#fff
+    classDef git fill:#f59e0b,stroke:#d97706,color:#000
+    classDef ci fill:#7c3aed,stroke:#6d28d9,color:#fff
+    classDef deploy fill:#1e40af,stroke:#1e3a5f,color:#fff
+
+    class CODE,TEST dev
+    class GITEA,REG git
+    class DRONE,LINT,UNIT,BUILD,PUSH ci
+    class PULL,COMPOSE,HEALTH,ROLLBACK deploy

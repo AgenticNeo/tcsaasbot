@@ -1,0 +1,1118 @@
+INFO:     Will watch for changes in these directories: ['/Users/kamarajp/TCSAASBOT/backend']
+INFO:     Uvicorn running on http://0.0.0.0:9011 (Press CTRL+C to quit)
+INFO:     Started reloader process [45950] using WatchFiles
+INFO:     Started server process [45969]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:55159 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55159 - "GET /openapi.json HTTP/1.1" 200 OK
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0x9131fc5e0f4838bd8e39b4c1c7886cb3",
+        "span_id": "0xdffb78629ea205a2",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1e1d9208fc7f88d9",
+    "start_time": "2026-02-17T11:00:44.944057Z",
+    "end_time": "2026-02-17T11:00:44.944186Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0x9131fc5e0f4838bd8e39b4c1c7886cb3",
+        "span_id": "0xd8456f7553d1c25e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1e1d9208fc7f88d9",
+    "start_time": "2026-02-17T11:00:44.945548Z",
+    "end_time": "2026-02-17T11:00:44.945562Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs",
+    "context": {
+        "trace_id": "0x9131fc5e0f4838bd8e39b4c1c7886cb3",
+        "span_id": "0x1e1d9208fc7f88d9",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:00:44.933198Z",
+    "end_time": "2026-02-17T11:00:44.945595Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/docs",
+        "http.url": "http://127.0.0.1:9011/docs",
+        "http.method": "GET",
+        "http.server_name": "127.0.0.1:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55159,
+        "http.route": "/docs",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json http send",
+    "context": {
+        "trace_id": "0x627c87eb3fe0845bcfc2e09bc8653f8b",
+        "span_id": "0xe419e9be7a9df1ac",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1fc749e66da9ed75",
+    "start_time": "2026-02-17T11:00:45.353626Z",
+    "end_time": "2026-02-17T11:00:45.353675Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json http send",
+    "context": {
+        "trace_id": "0x627c87eb3fe0845bcfc2e09bc8653f8b",
+        "span_id": "0x04268d2b2191fc92",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1fc749e66da9ed75",
+    "start_time": "2026-02-17T11:00:45.353932Z",
+    "end_time": "2026-02-17T11:00:45.353944Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json",
+    "context": {
+        "trace_id": "0x627c87eb3fe0845bcfc2e09bc8653f8b",
+        "span_id": "0x1fc749e66da9ed75",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:00:45.229033Z",
+    "end_time": "2026-02-17T11:00:45.353976Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/openapi.json",
+        "http.url": "http://127.0.0.1:9011/openapi.json",
+        "http.method": "GET",
+        "http.server_name": "127.0.0.1:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55159,
+        "http.route": "/openapi.json",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 16:30:47,160", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.01s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+INFO:     127.0.0.1:55172 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55172 - "GET /openapi.json HTTP/1.1" 200 OK
+{"asctime": "2026-02-17 16:30:54,988", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0xddc17f3d4403ac9e5dcdfa00597b4811",
+        "span_id": "0x5b8f0ee55a061632",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x94c76f3471ac5b80",
+    "start_time": "2026-02-17T11:00:52.178027Z",
+    "end_time": "2026-02-17T11:00:52.178082Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs http send",
+    "context": {
+        "trace_id": "0xddc17f3d4403ac9e5dcdfa00597b4811",
+        "span_id": "0x402029782de419ac",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x94c76f3471ac5b80",
+    "start_time": "2026-02-17T11:00:52.178843Z",
+    "end_time": "2026-02-17T11:00:52.178856Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /docs",
+    "context": {
+        "trace_id": "0xddc17f3d4403ac9e5dcdfa00597b4811",
+        "span_id": "0x94c76f3471ac5b80",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:00:52.177608Z",
+    "end_time": "2026-02-17T11:00:52.178889Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/docs",
+        "http.url": "http://localhost:9011/docs",
+        "http.method": "GET",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55172,
+        "http.route": "/docs",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json http send",
+    "context": {
+        "trace_id": "0xbe97e9a695b5e4c1a11607952e7087a7",
+        "span_id": "0x483a5033a9fca106",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xf351b3f082251449",
+    "start_time": "2026-02-17T11:00:52.332255Z",
+    "end_time": "2026-02-17T11:00:52.332267Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json http send",
+    "context": {
+        "trace_id": "0xbe97e9a695b5e4c1a11607952e7087a7",
+        "span_id": "0x1d972d6e582728e6",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xf351b3f082251449",
+    "start_time": "2026-02-17T11:00:52.332384Z",
+    "end_time": "2026-02-17T11:00:52.332389Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /openapi.json",
+    "context": {
+        "trace_id": "0xbe97e9a695b5e4c1a11607952e7087a7",
+        "span_id": "0xf351b3f082251449",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:00:52.331882Z",
+    "end_time": "2026-02-17T11:00:52.332400Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/openapi.json",
+        "http.url": "http://localhost:9011/openapi.json",
+        "http.method": "GET",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55172,
+        "http.route": "/openapi.json",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 16:30:59,992", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 0.87s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{"asctime": "2026-02-17 16:31:00,864", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.86s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+INFO:     127.0.0.1:55191 - "OPTIONS /api/v1/dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55191 - "POST /api/v1/dashboard/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: table bots has no column named avatar_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/asgi/__init__.py", line 810, in __call__
+    await self.app(scope, otel_receive, otel_send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/fastapi/__init__.py", line 307, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 314, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py", line 33, in create_bot
+    db.commit()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table bots has no column named avatar_url
+[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:01.103430', None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{
+    "name": "OPTIONS /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0x9d8fe261e9f028b91da427d1b28efeff",
+        "span_id": "0x05825f451ded3c05",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x309b8613488d457b",
+    "start_time": "2026-02-17T11:01:01.053820Z",
+    "end_time": "2026-02-17T11:01:01.053875Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "OPTIONS /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0x9d8fe261e9f028b91da427d1b28efeff",
+        "span_id": "0xb5a071d7863b9004",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x309b8613488d457b",
+    "start_time": "2026-02-17T11:01:01.054312Z",
+    "end_time": "2026-02-17T11:01:01.054326Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "OPTIONS /api/v1/dashboard/",
+    "context": {
+        "trace_id": "0x9d8fe261e9f028b91da427d1b28efeff",
+        "span_id": "0x309b8613488d457b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:01:01.051842Z",
+    "end_time": "2026-02-17T11:01:01.054362Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/api/v1/dashboard/",
+        "http.url": "http://localhost:9011/api/v1/dashboard/",
+        "http.method": "OPTIONS",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55191,
+        "http.route": "/api/v1/dashboard/",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/ http receive",
+    "context": {
+        "trace_id": "0x76e7a3fa79287a0a79b0de8bb3752f34",
+        "span_id": "0xb0da9cfb8e31f014",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd8c9ea19bb15d965",
+    "start_time": "2026-02-17T11:01:01.062561Z",
+    "end_time": "2026-02-17T11:01:01.062625Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.request"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0x76e7a3fa79287a0a79b0de8bb3752f34",
+        "span_id": "0xdf651fa1aec7442b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd8c9ea19bb15d965",
+    "start_time": "2026-02-17T11:01:01.133428Z",
+    "end_time": "2026-02-17T11:01:01.133525Z",
+    "status": {
+        "status_code": "ERROR"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 500
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0x76e7a3fa79287a0a79b0de8bb3752f34",
+        "span_id": "0x7faa8a41b87d506c",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd8c9ea19bb15d965",
+    "start_time": "2026-02-17T11:01:01.133777Z",
+    "end_time": "2026-02-17T11:01:01.133787Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/",
+    "context": {
+        "trace_id": "0x76e7a3fa79287a0a79b0de8bb3752f34",
+        "span_id": "0xd8c9ea19bb15d965",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:01:01.055763Z",
+    "end_time": "2026-02-17T11:01:01.133810Z",
+    "status": {
+        "status_code": "ERROR"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/api/v1/dashboard/",
+        "http.url": "http://localhost:9011/api/v1/dashboard/",
+        "http.method": "POST",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55191,
+        "http.route": "/api/v1/dashboard/",
+        "http.status_code": 500
+    },
+    "events": [
+        {
+            "name": "exception",
+            "timestamp": "2026-02-17T11:01:01.133242Z",
+            "attributes": {
+                "exception.type": "sqlalchemy.exc.OperationalError",
+                "exception.message": "(sqlite3.OperationalError) table bots has no column named avatar_url\n[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]\n[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:01.103430', None)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+                "exception.stacktrace": "Traceback (most recent call last):\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1967, in _exec_single_context\n    self.dialect.do_execute(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py\", line 952, in do_execute\n    cursor.execute(statement, parameters)\nsqlite3.OperationalError: table bots has no column named avatar_url\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/fastapi/__init__.py\", line 307, in __call__\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 95, in __call__\n    await self.simple_response(scope, receive, send, request_headers=headers)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 153, in simple_response\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py\", line 63, in __call__\n    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py\", line 18, in __call__\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 716, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 736, in app\n    await route.handle(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 290, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 119, in app\n    await wrap_app_handling_exceptions(app, request)(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 105, in app\n    response = await f(request)\n               ^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 424, in app\n    raw_response = await run_endpoint_function(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 314, in run_endpoint_function\n    return await run_in_threadpool(dependant.call, **values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/concurrency.py\", line 32, in run_in_threadpool\n    return await anyio.to_thread.run_sync(func)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/to_thread.py\", line 63, in run_sync\n    return await get_async_backend().run_sync_in_worker_thread(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py\", line 2502, in run_sync_in_worker_thread\n    return await future\n           ^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py\", line 986, in run\n    result = context.run(func, *args)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py\", line 33, in create_bot\n    db.commit()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 2030, in commit\n    trans.commit(_to_root=True)\n  File \"<string>\", line 2, in commit\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py\", line 137, in _go\n    ret_value = fn(self, *arg, **kw)\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 1311, in commit\n    self._prepare_impl()\n  File \"<string>\", line 2, in _prepare_impl\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py\", line 137, in _go\n    ret_value = fn(self, *arg, **kw)\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 1286, in _prepare_impl\n    self.session.flush()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4331, in flush\n    self._flush(objects)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4466, in _flush\n    with util.safe_reraise():\n         ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py\", line 224, in __exit__\n    raise exc_value.with_traceback(exc_tb)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4427, in _flush\n    flush_context.execute()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py\", line 466, in execute\n    rec.execute(self)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py\", line 642, in execute\n    util.preloaded.orm_persistence.save_obj(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py\", line 93, in save_obj\n    _emit_insert_statements(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py\", line 1233, in _emit_insert_statements\n    result = connection.execute(\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1419, in execute\n    return meth(\n           ^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py\", line 527, in _execute_on_connection\n    return connection._execute_clauseelement(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1641, in _execute_clauseelement\n    ret = self._execute_context(\n          ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1846, in _execute_context\n    return self._exec_single_context(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1986, in _exec_single_context\n    self._handle_dbapi_exception(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 2363, in _handle_dbapi_exception\n    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1967, in _exec_single_context\n    self.dialect.do_execute(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py\", line 952, in do_execute\n    cursor.execute(statement, parameters)\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table bots has no column named avatar_url\n[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]\n[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:01.103430', None)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n",
+                "exception.escaped": "False"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 16:31:07,200", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{"asctime": "2026-02-17 16:31:12,215", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.07s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+INFO:     127.0.0.1:55193 - "POST /api/v1/dashboard/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: table bots has no column named avatar_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/asgi/__init__.py", line 810, in __call__
+    await self.app(scope, otel_receive, otel_send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/fastapi/__init__.py", line 307, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 314, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py", line 33, in create_bot
+    db.commit()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table bots has no column named avatar_url
+[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:14.914872', None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{
+    "name": "POST /api/v1/dashboard/ http receive",
+    "context": {
+        "trace_id": "0xd931715ddd34839d33e6b3311a771b99",
+        "span_id": "0xfa78fdd53062b028",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x885fe5e574f9d3ee",
+    "start_time": "2026-02-17T11:01:14.908303Z",
+    "end_time": "2026-02-17T11:01:14.908373Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.request"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0xd931715ddd34839d33e6b3311a771b99",
+        "span_id": "0xcce94e66ae6ee9f6",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x885fe5e574f9d3ee",
+    "start_time": "2026-02-17T11:01:14.925915Z",
+    "end_time": "2026-02-17T11:01:14.925949Z",
+    "status": {
+        "status_code": "ERROR"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 500
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/ http send",
+    "context": {
+        "trace_id": "0xd931715ddd34839d33e6b3311a771b99",
+        "span_id": "0x61d8811f9b47ff65",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x885fe5e574f9d3ee",
+    "start_time": "2026-02-17T11:01:14.926481Z",
+    "end_time": "2026-02-17T11:01:14.926494Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /api/v1/dashboard/",
+    "context": {
+        "trace_id": "0xd931715ddd34839d33e6b3311a771b99",
+        "span_id": "0x885fe5e574f9d3ee",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-02-17T11:01:14.907163Z",
+    "end_time": "2026-02-17T11:01:14.926527Z",
+    "status": {
+        "status_code": "ERROR"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:9011",
+        "net.host.port": 9011,
+        "http.flavor": "1.1",
+        "http.target": "/api/v1/dashboard/",
+        "http.url": "http://localhost:9011/api/v1/dashboard/",
+        "http.method": "POST",
+        "http.server_name": "localhost:9011",
+        "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55193,
+        "http.route": "/api/v1/dashboard/",
+        "http.status_code": 500
+    },
+    "events": [
+        {
+            "name": "exception",
+            "timestamp": "2026-02-17T11:01:14.925786Z",
+            "attributes": {
+                "exception.type": "sqlalchemy.exc.OperationalError",
+                "exception.message": "(sqlite3.OperationalError) table bots has no column named avatar_url\n[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]\n[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:14.914872', None)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+                "exception.stacktrace": "Traceback (most recent call last):\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1967, in _exec_single_context\n    self.dialect.do_execute(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py\", line 952, in do_execute\n    cursor.execute(statement, parameters)\nsqlite3.OperationalError: table bots has no column named avatar_url\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/opentelemetry/instrumentation/fastapi/__init__.py\", line 307, in __call__\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 95, in __call__\n    await self.simple_response(scope, receive, send, request_headers=headers)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 153, in simple_response\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py\", line 63, in __call__\n    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py\", line 18, in __call__\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 716, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 736, in app\n    await route.handle(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/routing.py\", line 290, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 119, in app\n    await wrap_app_handling_exceptions(app, request)(scope, receive, send)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 105, in app\n    response = await f(request)\n               ^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 424, in app\n    raw_response = await run_endpoint_function(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/routing.py\", line 314, in run_endpoint_function\n    return await run_in_threadpool(dependant.call, **values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/starlette/concurrency.py\", line 32, in run_in_threadpool\n    return await anyio.to_thread.run_sync(func)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/to_thread.py\", line 63, in run_sync\n    return await get_async_backend().run_sync_in_worker_thread(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py\", line 2502, in run_sync_in_worker_thread\n    return await future\n           ^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py\", line 986, in run\n    result = context.run(func, *args)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py\", line 33, in create_bot\n    db.commit()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 2030, in commit\n    trans.commit(_to_root=True)\n  File \"<string>\", line 2, in commit\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py\", line 137, in _go\n    ret_value = fn(self, *arg, **kw)\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 1311, in commit\n    self._prepare_impl()\n  File \"<string>\", line 2, in _prepare_impl\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py\", line 137, in _go\n    ret_value = fn(self, *arg, **kw)\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 1286, in _prepare_impl\n    self.session.flush()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4331, in flush\n    self._flush(objects)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4466, in _flush\n    with util.safe_reraise():\n         ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py\", line 224, in __exit__\n    raise exc_value.with_traceback(exc_tb)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py\", line 4427, in _flush\n    flush_context.execute()\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py\", line 466, in execute\n    rec.execute(self)\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py\", line 642, in execute\n    util.preloaded.orm_persistence.save_obj(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py\", line 93, in save_obj\n    _emit_insert_statements(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py\", line 1233, in _emit_insert_statements\n    result = connection.execute(\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1419, in execute\n    return meth(\n           ^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py\", line 527, in _execute_on_connection\n    return connection._execute_clauseelement(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1641, in _execute_clauseelement\n    ret = self._execute_context(\n          ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1846, in _execute_context\n    return self._exec_single_context(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1986, in _exec_single_context\n    self._handle_dbapi_exception(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 2363, in _handle_dbapi_exception\n    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py\", line 1967, in _exec_single_context\n    self.dialect.do_execute(\n  File \"/Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py\", line 952, in do_execute\n    cursor.execute(statement, parameters)\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table bots has no column named avatar_url\n[SQL: INSERT INTO bots (tenant_id, name, description, prompt_template, welcome_message, primary_color, avatar_url, position, placeholder_text, bubble_greeting, is_active, tools, flow_data, enabled_flows, rich_messages_enabled, quick_replies, canned_responses, greeting_enabled, greeting_message, faq_enabled, custom_answers, agent_transfer_enabled, agent_email, agent_webhook, transfer_trigger_keywords, small_talk_enabled, small_talk_responses, collect_name, collect_email, collect_phone, collect_custom_fields, shopify_enabled, shopify_store_url, slack_enabled, slack_webhook, zendesk_enabled, zendesk_subdomain, freshdesk_enabled, freshdesk_domain, goals, tags, ab_test_enabled, ab_test_variants, flow_version, flow_version_history, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]\n[parameters: ('demo_tenant_key', 'Support Assistant Bot', 'Answer support questions and deflect repetitive tickets.', 'You are a support specialist. Be concise, accurate, and action-oriented.', 'Hi! I can help with support questions. What do you need?', '#2563eb', None, 'right', 'Type a message...', 'Need help? Ask me anything.', 1, '[]', '{}', '[]', 1, '[]', '[]', 1, None, 1, '{}', 0, None, None, '[]', 1, '[]', 0, 0, 0, '[]', 0, None, 0, None, 0, None, 0, None, '[]', '[]', 0, '[]', 1, '[]', '2026-02-17 11:01:14.914872', None)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n",
+                "exception.escaped": "False"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.39.1",
+            "service.name": "TCSAASBOT",
+            "deployment.environment": "development"
+        },
+        "schema_url": ""
+    }
+}
+{"asctime": "2026-02-17 16:31:19,864", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{"asctime": "2026-02-17 16:31:24,874", "levelname": "WARNING", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.03s.", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+{"asctime": "2026-02-17 16:31:31,652", "levelname": "ERROR", "name": "opentelemetry.exporter.otlp.proto.grpc.exporter", "message": "Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE", "trace_id": null, "span_id": null, "otelSpanID": "0", "otelTraceID": "0", "otelTraceSampled": false, "otelServiceName": ""}
+WARNING:  WatchFiles detected changes in 'app/models/schemas.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45969]
+INFO:     Started server process [55533]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/v1/endpoints/dashboard.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [55533]
+INFO:     Started server process [55538]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [55538]
+INFO:     Stopping reloader process [45950]

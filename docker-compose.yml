@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: tangentcloudai_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: tangentcloudai
+      MYSQL_USER: tcsaasuser
+      MYSQL_PASSWORD: tcsaaspassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Redis for Caching & Queues
+  redis:
+    image: redis:alpine
+    container_name: tangentcloudai_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  # ChromaDB (Vector Database) - Optional if running locally vs managed
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: tangentcloudai_chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+volumes:
+  db_data:
+  redis_data:
+  chroma_data:

@@ -1,0 +1,63 @@
+graph LR
+    subgraph COMPOSE_APP["docker-compose.yml — App Stack"]
+        direction TB
+        FASTAPI["🚀 FastAPI<br/>backend:9100"]
+        NEXTJS["💻 Next.js<br/>dashboard:9101"]
+        EXPO["📱 Expo<br/>mobile:9102"]
+    end
+
+    subgraph COMPOSE_DATA["docker-compose.yml — Data"]
+        direction TB
+        PG["🐘 PostgreSQL 16<br/>db:5432"]
+        RD["⚡ Redis 7<br/>redis:6379"]
+        CH["🔮 ChromaDB<br/>chromadb:8000"]
+    end
+
+    subgraph COMPOSE_MON["docker-compose.monitoring.yml"]
+        direction TB
+        LO["📋 Loki 3.0<br/>loki:3100"]
+        PT["📡 Promtail<br/>promtail"]
+        PR["📊 Prometheus<br/>prometheus:9090"]
+        GR["📈 Grafana 11<br/>grafana:3001"]
+        OT["🔭 OTEL Collector<br/>otel:4317"]
+    end
+
+    subgraph COMPOSE_LLM["docker-compose.llm.yml — Optional"]
+        direction TB
+        OL["🦙 Ollama<br/>ollama:11434"]
+    end
+
+    subgraph PROXY["Reverse Proxy"]
+        CA["⚡ Caddy v2<br/>:80 / :443"]
+    end
+
+    CA -->|"api.domain.com"| FASTAPI
+    CA -->|"app.domain.com"| NEXTJS
+    CA -->|"grafana.domain.com"| GR
+
+    FASTAPI --> PG
+    FASTAPI --> RD
+    FASTAPI --> CH
+    FASTAPI --> OT
+    FASTAPI -.-> OL
+
+    PT --> LO
+    OT --> LO
+    OT --> PR
+    LO --> GR
+    PR --> GR
+
+    NEXTJS --> FASTAPI
+    EXPO --> FASTAPI
+
+    classDef proxy fill:#1e40af,stroke:#1e3a5f,color:#fff
+    classDef app fill:#059669,stroke:#047857,color:#fff
+    classDef data fill:#dc2626,stroke:#b91c1c,color:#fff
+    classDef mon fill:#f59e0b,stroke:#d97706,color:#000
+    classDef llm fill:#7c3aed,stroke:#6d28d9,color:#fff
+
+    class CA proxy
+    class FASTAPI,NEXTJS,EXPO app
+    class PG,RD,CH data
+    class LO,PT,PR,GR,OT mon
+    class OL llm

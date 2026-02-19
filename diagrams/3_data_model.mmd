@@ -1,0 +1,116 @@
+erDiagram
+    TENANTS ||--o{ BOTS : "owns"
+    TENANTS ||--o{ CONVERSATIONS : "has"
+    TENANTS ||--o{ LEADS : "captures"
+    TENANTS ||--|| TENANT_USAGE : "tracks"
+    TENANTS ||--o| EMAIL_SETTINGS : "configures"
+
+    BOTS ||--o{ BOT_FAQS : "has"
+    BOTS ||--o{ BOT_FLOWS : "has"
+    BOTS ||--o{ BOT_INTEGRATIONS : "connects"
+    BOTS ||--o{ CONVERSATIONS : "serves"
+    BOTS ||--o{ LEAD_FORMS : "captures_via"
+
+    CONVERSATIONS ||--o{ MESSAGES : "contains"
+    CONVERSATIONS ||--o{ LEADS : "generates"
+
+    TENANTS {
+        string id PK
+        string name
+        string plan
+    }
+
+    BOTS {
+        int id PK
+        string tenant_id FK
+        string name
+        text prompt_template
+        string welcome_message
+        string primary_color
+        string avatar_url
+        bool is_active
+        json tools
+        json flow_data
+        json small_talk_responses
+        json quick_replies
+        bool agent_transfer_enabled
+        bool faq_enabled
+    }
+
+    BOT_FAQS {
+        int id PK
+        int bot_id FK
+        string question
+        text answer
+        string category
+        int usage_count
+        int success_rate
+    }
+
+    BOT_FLOWS {
+        int id PK
+        int bot_id FK
+        string name
+        json flow_data
+        int version
+        bool is_active
+    }
+
+    BOT_INTEGRATIONS {
+        int id PK
+        int bot_id FK
+        string integration_type
+        json config
+        bool is_active
+    }
+
+    CONVERSATIONS {
+        int id PK
+        string tenant_id FK
+        int bot_id FK
+        string status
+        string priority
+        bool agent_requested
+    }
+
+    MESSAGES {
+        int id PK
+        int conversation_id FK
+        string sender
+        text text
+        datetime created_at
+    }
+
+    LEAD_FORMS {
+        int id PK
+        string tenant_id FK
+        int bot_id FK
+        string title
+        json fields
+        bool is_active
+    }
+
+    LEADS {
+        int id PK
+        string tenant_id FK
+        int bot_id FK
+        int conversation_id FK
+        json data
+        string country
+        string source
+    }
+
+    TENANT_USAGE {
+        int id PK
+        string tenant_id FK
+        int messages_sent
+        int documents_indexed
+    }
+
+    EMAIL_SETTINGS {
+        int id PK
+        string tenant_id FK
+        string smtp_host
+        int smtp_port
+        bool is_enabled
+    }

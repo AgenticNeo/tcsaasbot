@@ -1,0 +1,44 @@
+sequenceDiagram
+    participant U as 👤 User
+    participant W as 🔌 Chat Widget
+    participant C as ⚡ Caddy
+    participant F as 🚀 FastAPI
+    participant MW as 🔐 Auth Middleware
+    participant CS as 💬 Chat Service
+    participant DB as 🐘 PostgreSQL
+    participant CR as 🔮 ChromaDB
+    participant LM as 🤖 Gemini / Ollama
+    participant RD as ⚡ Redis
+    participant LK as 📋 Loki
+
+    U->>W: Types message
+    W->>C: POST /api/v1/chat/public
+    C->>F: Proxy request (TLS terminated)
+    F->>MW: Validate X-API-Key header
+    MW->>F: tenant_id extracted
+    F->>LK: Log: chat_request_received
+
+    F->>DB: Get or Create Conversation
+    F->>DB: INSERT user message
+
+    alt Small Talk Match
+        F->>DB: Check bot.small_talk_responses
+        F-->>W: Return cached small talk response
+    else Agent Transfer Keywords
+        F->>DB: Check transfer_trigger_keywords
+        F->>DB: Mark conversation status = open
+        F-->>W: Return transfer message
+    else RAG + AI Response
+        F->>DB: Fetch chat history (last 11 messages)
+        F->>CR: Vector similarity search (query embedding)
+        CR-->>F: Top-K relevant documents + scores
+        F->>LM: LLM call with context + history + query
+        LM-->>F: Generated answer
+        F->>DB: INSERT bot message
+        F->>RD: Increment tenant usage counter
+    end
+
+    F->>LK: Log: ai_response_generated with duration_ms
+    F-->>C: JSON ChatResponse
+    C-->>W: HTTPS Response
+    W-->>U: Display answer with sources and quick replies
