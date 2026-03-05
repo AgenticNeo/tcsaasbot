@@ -88,8 +88,9 @@ class ChatResponse(BaseModel):
 
 def _build_capacity_fallback_message() -> str:
     return (
-        "I am temporarily at capacity right now. "
-        "Please try again in a minute, or contact support if this keeps happening."
+        "I don't have a knowledge base configured yet. "
+        "Please ask your administrator to upload documents or FAQs so I can better assist you. "
+        "In the meantime, how can I help?"
     )
 
 

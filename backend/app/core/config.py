@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "TangentCloud AI Bots API"
     OPENAI_API_KEY: str = ""
     GOOGLE_API_KEY: str = ""
-    LLM_PROVIDER: str = "gemini"  # "openai" or "gemini"
+    LLM_PROVIDER: str = "openai"  # "openai" or "gemini"
     ENV: str = "development"
     QDRANT_PATH: str = str(Path(__file__).resolve().parents[3] / "qdrant_db")
     # RAG tuning
