@@ -1,37 +1,30 @@
-name: tangentcloud
+# DigitalOcean App Platform - Quick Start Configuration
+# For deploying just Backend + Dashboard to DigitalOcean
+
+name: tangentcloud-saas
 services:
-- name: backend
+- name: api
   github:
     repo: kamaraj/kyrochatbot
     branch: tcsaasbot
   source_dir: backend
   build_command: pip install -r requirements.txt
-  http_port: 9100
-  run_command: uvicorn app.main:app --host 0.0.0.0 --port 9100
+  http_port: 8000
+  run_command: uvicorn app.main:app --host 0.0.0.0 --port 8000
   envs:
   - key: OPENAI_API_KEY
     scope: RUN_AND_BUILD_TIME
     value: ${OPENAI_API_KEY}
-  - key: GOOGLE_API_KEY
-    scope: RUN_AND_BUILD_TIME
-    value: ${GOOGLE_API_KEY}
   - key: LLM_PROVIDER
     scope: RUN_AND_BUILD_TIME
     value: openai
-  - key: DATABASE_URL
-    scope: RUN_AND_BUILD_TIME
-    value: ${DATABASE_URL}
-  - key: REDIS_URL
-    scope: RUN_AND_BUILD_TIME
-    value: ${REDIS_URL}
   - key: QDRANT_PATH
     scope: RUN_AND_BUILD_TIME
     value: /app/qdrant_db
   health_check:
     http_path: /health
-  log_destination_ref: tangentcloud_logs
 
-- name: dashboard
+- name: web
   github:
     repo: kamaraj/kyrochatbot
     branch: tcsaasbot
@@ -42,47 +35,23 @@ services:
   envs:
   - key: NEXT_PUBLIC_API_URL
     scope: RUN_AND_BUILD_TIME
-    value: https://${BACKEND_DOMAIN}/api
+    value: /api
   - key: NODE_ENV
     scope: RUN_AND_BUILD_TIME
     value: production
   health_check:
     http_path: /
-  log_destination_ref: tangentcloud_logs
-
-- name: mobile
-  github:
-    repo: kamaraj/kyrochatbot
-    branch: tcsaasbot
-  source_dir: mobile
-  build_command: npm ci
-  http_port: 9102
-  run_command: npm run start
-  envs:
-  - key: REACT_APP_API_URL
-    scope: RUN_AND_BUILD_TIME
-    value: https://${BACKEND_DOMAIN}/api
-  - key: NODE_ENV
-    scope: RUN_AND_BUILD_TIME
-    value: production
-  log_destination_ref: tangentcloud_logs
 
 databases:
-- name: postgres
+- name: db
   engine: PG
-  version: "14"
+  version: "15"
   production: true
   
 - name: redis
   engine: REDIS
   version: "7"
   production: true
-
-static_sites:
-- name: docs
-  source_dir: docs
-  routes:
-  - path: /docs
 
 ingress:
   rules:
@@ -91,15 +60,8 @@ ingress:
       path:
         prefix: /api
     component:
-      name: backend
+      name: api
   - match:
       domain: ${APP_DOMAIN}
-      path:
-        prefix: /
     component:
-      name: dashboard
-
-log_destinations:
-- name: tangentcloud_logs
-  datadog:
-    token: ${DATADOG_API_TOKEN}
+      name: web
