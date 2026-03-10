@@ -40,7 +40,11 @@ jobs:
             set -euo pipefail
             sudo mkdir -p /opt/tcsaasbot
             sudo rm -rf /opt/tcsaasbot/*
-            sudo tar -xzf /tmp/repo.tar.gz -C /opt/tcsaasbot
+            ARCHIVE_PATH=/tmp/repo.tar.gz
+            if [ ! -f "$ARCHIVE_PATH" ] && [ -f /tmp/.deploy/repo.tar.gz ]; then
+              ARCHIVE_PATH=/tmp/.deploy/repo.tar.gz
+            fi
+            sudo tar -xzf "$ARCHIVE_PATH" -C /opt/tcsaasbot
             sudo chown -R ${{ secrets.DROPLET_USER }} /opt/tcsaasbot
             sudo chmod +x /opt/tcsaasbot/scripts/remote_deploy.sh
             cat > /opt/tcsaasbot/.env.droplet <<'EOF'
