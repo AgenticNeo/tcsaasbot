@@ -1,0 +1,95 @@
+...........................                                              [100%]
+=============================== warnings summary ===============================
+venv/lib/python3.12/site-packages/pythonjsonlogger/jsonlogger.py:11
+  /Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/pythonjsonlogger/jsonlogger.py:11: DeprecationWarning: pythonjsonlogger.jsonlogger has been moved to pythonjsonlogger.json
+    warnings.warn(
+
+venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+app/core/database.py:21
+  /Users/kamarajp/TCSAASBOT/backend/app/core/database.py:21: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+app/models/schemas.py:45
+  /Users/kamarajp/TCSAASBOT/backend/app/models/schemas.py:45: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class BotResponse(BotBase):
+
+app/models/schemas.py:61
+  /Users/kamarajp/TCSAASBOT/backend/app/models/schemas.py:61: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class MessageResponse(BaseModel):
+
+app/models/schemas.py:71
+  /Users/kamarajp/TCSAASBOT/backend/app/models/schemas.py:71: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ConversationResponse(BaseModel):
+
+app/models/schemas.py:147
+  /Users/kamarajp/TCSAASBOT/backend/app/models/schemas.py:147: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class FAQResponse(FAQBase):
+
+app/api/v1/flows.py:24
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/flows.py:24: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class FlowResponse(FlowBase):
+
+app/main.py:51
+  /Users/kamarajp/TCSAASBOT/backend/app/main.py:51: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+venv/lib/python3.12/site-packages/fastapi/applications.py:4573
+venv/lib/python3.12/site-packages/fastapi/applications.py:4573
+  /Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/fastapi/applications.py:4573: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+app/main.py:59
+  /Users/kamarajp/TCSAASBOT/backend/app/main.py:59: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("shutdown")
+
+tests/test_live_chat_screen.py: 6 warnings
+tests/test_api.py: 19 warnings
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py:28: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    bot_data = bot.dict()
+
+tests/test_live_chat_screen.py: 15 warnings
+tests/test_api.py: 41 warnings
+  /Users/kamarajp/TCSAASBOT/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_api.py::TestBotCRUD::test_update_bot
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/endpoints/dashboard.py:192: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    update_data = bot_update.dict(exclude_unset=True)
+
+tests/test_api.py::TestFlows::test_create_flow
+tests/test_api.py::TestFlows::test_update_flow_bumps_version
+tests/test_api.py::TestFlows::test_delete_flow
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/flows.py:40: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    db_flow = BotFlow(**flow.dict(), bot_id=bot_id)
+
+tests/test_api.py::TestFlows::test_update_flow_bumps_version
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/flows.py:71: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    for key, value in flow_update.dict().items():
+
+tests/test_api.py::TestLeads::test_create_lead_form
+tests/test_api.py::TestLeads::test_create_lead_form
+tests/test_api.py::TestLeads::test_get_lead_form_public
+tests/test_api.py::TestLeads::test_get_lead_form_public
+  /Users/kamarajp/TCSAASBOT/backend/app/api/v1/leads.py:29: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    fields=json.dumps([f.dict() for f in form.fields])
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+27 passed, 102 warnings in 0.33s
